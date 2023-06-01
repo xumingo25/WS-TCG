@@ -1,17 +1,36 @@
-package com.hexagonal.tcg.domain.models;
+package com.hexagonal.tcg.infraestructure.entities;
 
-public class CartaPokemon {
+import com.hexagonal.tcg.domain.models.CartaPokemon;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
+public class CartaPokemonEntity {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
     private String nombre;
+
     private String codigo;
+
     private String rareza;
 
     private String imagen;
 
     private Long expansion_id;
+
     private Long estado_id;
 
-    public CartaPokemon(Long id, String nombre, String codigo, String rareza, String imagen, Long expansion_id, Long estado_id) {
+    public CartaPokemonEntity(){
+
+    }
+
+    public CartaPokemonEntity(Long id, String nombre, String codigo, String rareza, String imagen, Long expansion_id, Long estado_id) {
         this.id = id;
         this.nombre = nombre;
         this.codigo = codigo;
@@ -19,6 +38,15 @@ public class CartaPokemon {
         this.imagen = imagen;
         this.expansion_id = expansion_id;
         this.estado_id = estado_id;
+    }
+
+    public static CartaPokemonEntity fromDomainModeol(CartaPokemon carta){
+        return new CartaPokemonEntity(carta.getId(),carta.getNombre(),carta.getCodigo(),
+                carta.getRareza(),carta.getImagen(),carta.getExpansion_id(),carta.getEstado_id());
+    }
+
+    public CartaPokemon toDomainModel(){
+        return new CartaPokemon(id,nombre,codigo,rareza,imagen,expansion_id,estado_id);
     }
 
     public Long getId() {
