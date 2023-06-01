@@ -40,7 +40,7 @@ public class CartaPokemonEntity {
         this.estado_id = estado_id;
     }
 
-    public static CartaPokemonEntity fromDomainModeol(CartaPokemon carta){
+    public static CartaPokemonEntity fromDomainModel(CartaPokemon carta){
         return new CartaPokemonEntity(carta.getId(),carta.getNombre(),carta.getCodigo(),
                 carta.getRareza(),carta.getImagen(),carta.getExpansion_id(),carta.getEstado_id());
     }
