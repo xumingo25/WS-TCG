@@ -9,14 +9,14 @@ import com.hexagonal.tcg.domain.ports.in.UpdateCartaPokemonUseCase;
 import java.util.List;
 import java.util.Optional;
 
-public class cartaPokemonService implements CreateCartaPokemonUseCase, RetrieveCartaPokemonUseCase, UpdateCartaPokemonUseCase, DeleteCartaPokemonUseCase {
+public class CartaPokemonService implements CreateCartaPokemonUseCase, RetrieveCartaPokemonUseCase, UpdateCartaPokemonUseCase, DeleteCartaPokemonUseCase {
 
     private final CreateCartaPokemonUseCase createCartaPokemonUseCase;
     private final RetrieveCartaPokemonUseCase retrieveCartaPokemonUseCase;
     private final UpdateCartaPokemonUseCase updateCartaPokemonUseCase;
     private final DeleteCartaPokemonUseCase deleteCartaPokemonUseCase;
 
-    public cartaPokemonService(CreateCartaPokemonUseCase createCartaPokemonUseCase, RetrieveCartaPokemonUseCase retrieveCartaPokemonUseCase, UpdateCartaPokemonUseCase updateCartaPokemonUseCase, DeleteCartaPokemonUseCase deleteCartaPokemonUseCase) {
+    public CartaPokemonService(CreateCartaPokemonUseCase createCartaPokemonUseCase, RetrieveCartaPokemonUseCase retrieveCartaPokemonUseCase, UpdateCartaPokemonUseCase updateCartaPokemonUseCase, DeleteCartaPokemonUseCase deleteCartaPokemonUseCase) {
         this.createCartaPokemonUseCase = createCartaPokemonUseCase;
         this.retrieveCartaPokemonUseCase = retrieveCartaPokemonUseCase;
         this.updateCartaPokemonUseCase = updateCartaPokemonUseCase;
