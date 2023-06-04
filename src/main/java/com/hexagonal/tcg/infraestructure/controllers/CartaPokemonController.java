@@ -47,7 +47,7 @@ public class CartaPokemonController {
     }
 
     @DeleteMapping("/{cartaId}")
-    public ResponseEntity<CartaPokemon> deleteCardById(@PathVariable Long cartaId){
+    public ResponseEntity<Void> deleteCardById(@PathVariable Long cartaId){
          if(cartaPokemonService.deleteCartaPokemon(cartaId)){
              return new ResponseEntity<>(HttpStatus.NO_CONTENT);
          }else{
