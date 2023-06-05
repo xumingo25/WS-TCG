@@ -35,7 +35,7 @@ public class CartaPokemonController {
     @GetMapping
     public ResponseEntity<List<CartaPokemon>> getAllCartas(){
         List<CartaPokemon> cartas = cartaPokemonService.getAllCartas();
-        return new ResponseEntity<>(HttpStatus.OK);
+        return new ResponseEntity<>(cartas,HttpStatus.OK);
     }
 
 

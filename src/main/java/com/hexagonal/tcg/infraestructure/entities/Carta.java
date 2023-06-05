@@ -8,7 +8,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class CartaPokemonEntity {
+public class Carta {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -26,11 +26,11 @@ public class CartaPokemonEntity {
 
     private Long estado_id;
 
-    public CartaPokemonEntity(){
+    public Carta(){
 
     }
 
-    public CartaPokemonEntity(Long id, String nombre, String codigo, String rareza, String imagen, Long expansion_id, Long estado_id) {
+    public Carta(Long id, String nombre, String codigo, String rareza, String imagen, Long expansion_id, Long estado_id) {
         this.id = id;
         this.nombre = nombre;
         this.codigo = codigo;
@@ -40,8 +40,8 @@ public class CartaPokemonEntity {
         this.estado_id = estado_id;
     }
 
-    public static CartaPokemonEntity fromDomainModel(CartaPokemon carta){
-        return new CartaPokemonEntity(carta.getId(),carta.getNombre(),carta.getCodigo(),
+    public static Carta fromDomainModel(CartaPokemon carta){
+        return new Carta(carta.getId(),carta.getNombre(),carta.getCodigo(),
                 carta.getRareza(),carta.getImagen(),carta.getExpansion_id(),carta.getEstado_id());
     }
 
